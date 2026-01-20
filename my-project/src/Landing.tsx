@@ -1,34 +1,42 @@
 
 import type { Project } from "./Project"
 import ProjectCard from "./ProjectCard"
+import TechStack from "./TechStack";
+import { useNavigate } from "react-router";
 
 
 const Landing = () => {
     // ... ProjectData stays the same ...
+    const navigate = useNavigate();
     const ProjectData : Project[] = [
         {
             title: "Anon-forum",
             description:"An anonymous forums users can use to ask for help and support",
             tags: ["Java", "React", "Spring Boot", "Tailwind CSS", "Supabase"],
-            imageUrl : "none"
+            imageUrl : "none",
+            link : "https://anon-forum-two.vercel.app/"
         },
         {
             title: "SFU Meetup",
             description : "A android application that allows SFU stuends to plan, join, and organize events",
             tags: ["Kotlin", "Jetpack Compose", "Firebase"],
-            imageUrl: "none"
+            imageUrl: "none",
+            link : "https://chanchantang.github.io/362-Project-Webpage/"
         },
         {
             title: "GeoShopper",
             description : "A chrome extension that identifies brand origins and suggests local alternatives from an Amazon shopping cart",
             tags: ["HTML", "CSS", "JavaScript"],
-            imageUrl: "none"
+            imageUrl: "none",
+            link : "https://github.com/KuanKongy/GeoShopper"
+
         },
         {
             title: "Automatic badminton drop-in registration",
             description: "A python script that automates the process of registering for drop-in badminton events for a local community centre near me",
             tags : ["Python", "Selenium"],
-            imageUrl : "none"
+            imageUrl : "none",
+            link : "https://github.com/primordial-soup1278/Recreation-center-auto-register"
         },
         {
             title : "Unix shell implementation",
@@ -54,7 +62,9 @@ const Landing = () => {
                     <button className="bg-blue-600 hover:bg-blue-700 transition-colors text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-blue-500/20">
                         View My Work
                     </button>
-                    <button className="border border-white/20 hover:bg-white/5 transition-colors text-white font-bold py-3 px-6 rounded-xl">
+                    <button className="border border-white/20 hover:bg-white/5 transition-colors text-white font-bold py-3 px-6 rounded-xl"
+                        onClick={() => navigate('/contact')}
+                    >
                         Contact Me
                     </button>
                 </div>
@@ -87,16 +97,7 @@ const Landing = () => {
                         </p>
                     </div>
                     
-                    <div>
-                        <h4 className='text-2xl font-bold mb-6'>Tech Stack</h4>
-                        <div className="flex flex-wrap gap-2">
-                            {["Java", "Python", "C", "React", "Kotlin", "Spring Boot", "SQL"].map((skill) => (
-                                <span key={skill} className="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-blue-400 text-sm font-medium">
-                                    {skill}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
+                   <TechStack /> 
                 </div>
             </div>
 
