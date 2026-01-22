@@ -59,9 +59,6 @@ const Landing = () => {
                     Computing Science student at SFU looking for internship or co-op opportunities.
                 </h2>
                 <div className="flex flex-row gap-4 mt-8">
-                    <button className="bg-blue-600 hover:bg-blue-700 transition-colors text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-blue-500/20">
-                        View My Work
-                    </button>
                     <button className="border border-white/20 hover:bg-white/5 transition-colors text-white font-bold py-3 px-6 rounded-xl"
                         onClick={() => navigate('/contact')}
                     >
